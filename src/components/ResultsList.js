@@ -6,7 +6,6 @@ const ResultsList = ({ title, results }) => {
   return (
     <View style={styles.viewStyle}>
       <Text style={styles.titleStyle}>{title}</Text>
-      <Text>Results: {results.length}</Text>
       <FlatList
         horizontal
         data={results}
@@ -14,6 +13,7 @@ const ResultsList = ({ title, results }) => {
         renderItem={({ item }) => {
           return <ResultsDetail result={item} />;
         }}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
@@ -22,11 +22,11 @@ const ResultsList = ({ title, results }) => {
 const styles = StyleSheet.create({
   titleStyle: {
     fontSize: 18,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    marginLeft: 15,
+    marginBottom: 5
   },
-  viewStyle: {
-    padding: 5
-  }
+  viewStyle: { marginBottom: 10 }
 });
 
 export default ResultsList;
