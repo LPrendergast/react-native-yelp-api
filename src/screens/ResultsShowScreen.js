@@ -28,6 +28,9 @@ const ResultsShowScreen = ({ navigation }) => {
       <Text>
         {result.location.address1}, {result.location.zip_code}
       </Text>
+      <Text>
+        {result.rating} stars, {result.review_count} reviews
+      </Text>
       <FlatList
         data={result.photos}
         keyExtractor={photo => photo}
@@ -48,7 +51,8 @@ const styles = StyleSheet.create({
   imageStyle: {
     height: 200,
     width: 200,
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 4
   }
 });
 export default ResultsShowScreen;
