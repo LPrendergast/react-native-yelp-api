@@ -17,16 +17,13 @@ const SearchScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <>
       <SearchBar
         term={term}
         onTermChange={newTerm => setTerm(newTerm)}
         onTermSubmit={() => searchAPI(term)}
       />
       {errors ? <Text>{errors}</Text> : null}
-      <Text style={styles.textStyle}>
-        We have found {results.length} results
-      </Text>
       <ScrollView>
         <ResultsList
           results={filterResultsByPrice("£")}
@@ -38,7 +35,7 @@ const SearchScreen = () => {
           title="Big Spender"
         />
       </ScrollView>
-    </View>
+    </>
   );
 };
 
