@@ -17,7 +17,7 @@ const SearchScreen = () => {
   };
 
   return (
-    <View>
+    <View >
       <SearchBar
         term={term}
         onTermChange={newTerm => setTerm(newTerm)}
